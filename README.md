@@ -17,8 +17,7 @@ The inner workings of the game are probably a little laborious, but the code to 
 
 ### The game
 
-The game asks you a series of general knowledge questions. It presents you with a choice of four answers, where one is correct. The more you get right, the more money you build up, until you win the jackpot. If you make a mistake, you lose. If you hesitate for more than ten seconds, you lose. Here's a photo from the game: ![](http://imgur.com/a/7CQ2Z.jpg)
-
+The game asks you a series of general knowledge questions. It presents you with a choice of four answers, where one is correct. The more you get right, the more money you build up, until you win the jackpot.
 
 ### Decrypting the game files
 The game data files look like [this](https://github.com/jjough/slotbot/blob/master/jackpot_q_bank/UK_geography_01.QQQ); encrypted, unreadable text.
@@ -37,9 +36,9 @@ The two basic ingredients of this brute-force search will be (i) a way to compar
 
 There's a standard information-theoretic way of comparing two strings, which will work fine for this purpose: the [Levenschtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance), defined as the minimum number of edits needed to change one string into another. Since a longer string tends to accumulate more reading errors, we'll normalize the Levenschtein distance over its length.
 
-Now we need to use this to build a metric comparing question/answer sets. First, it'll be useful to count up how many combinations we need to search through.
+Now we need to use this to build a metric comparing question/answer sets.
 
-Here's the search algorithm I came up with:
+Here's the search algorithm that ended up working:
 
  = argmax
  
@@ -54,9 +53,3 @@ Here's the code to carry out the brute force search given the output of the OCR.
 I bought a [raspberry pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) microcomputer to run the software.
 
 I actually couldn't get the code to run fast enough on the raspberry pi to be useful (a single pass took about 30s). The bottleneck was the computer vision and OCR (the only bits I couldn't optimize), so I ended up having to pipe the image over wifi to be processed by a laptop in my backpack. [Here's the code on the microcomputer](). I used a TTS engine to read out the answer into an earpiece.
-
-### The system in action
-
-The thing actually worked, amazingly. Here's me winning the jackpot (this is unfortunately the only video I have).
-
-This baby paid my rent for months.
