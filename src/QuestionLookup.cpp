@@ -68,7 +68,7 @@ size_t QuestionLookup::LevenshteinDistance(const std::string &s1 , const std::st
         return result;
 }
 
-// Word_distance function (Levenshtein Distance for words) - callable from Main. This should not be used unless question processing time is an issue.
+// Word_distance function
 
 std::vector <std::string > &QuestionLookup::split(const std::string &s , char delim , std::vector <std::string > &elems ) {
         std::stringstream ss(s );
@@ -114,9 +114,9 @@ unsigned int QuestionLookup::word_distance(const std::vector <std::string >& s1,
 // Matrix algebra functions called from main.
 void QuestionLookup::swap(int& a, int& b)
 { int x=a;
-  a=b;
-  b=x;
-}
+      a=b;
+      b=x;
+}  
 
 
 
@@ -125,14 +125,12 @@ void QuestionLookup::printVector(std::vector<int>& theVector)
 
 for (unsigned int i=0; i<theVector.size(); i++)
 {
-          basisgenerator[i][permutation] = theVector[i];
+    basisgenerator[i][permutation] = theVector[i];
 }
-
-     permutation++;
-
+    permutation++;
     for (unsigned int x=0; x<theVector.size(); x++)
   {
-  basisgenerator[x][permutation] = theVector[x];
+    basisgenerator[x][permutation] = theVector[x];
   }
 }
 
@@ -140,7 +138,6 @@ for (unsigned int i=0; i<theVector.size(); i++)
 void QuestionLookup::generateAllPermutations(std::vector<int>& toBePermuted, unsigned int nextIndex)
 { if (nextIndex==toBePermuted.size())
   { printVector(toBePermuted);
-
     return;
   }
 
@@ -158,9 +155,6 @@ void QuestionLookup::generateAllPermutations(std::vector<int>& toBePermuted)
 }
 
 
-
-
-
 void QuestionLookup::generatebasis(){
 std::vector<int> theVector;
   theVector.push_back(0);
@@ -168,12 +162,6 @@ std::vector<int> theVector;
   theVector.push_back(2);
   theVector.push_back(3);
   generateAllPermutations(theVector);
-
-/* Without the next paragraph, the first basis matrix comes out wrong. I have no idea why this is! */
-basisgenerator[0][0] = 0;
-basisgenerator[1][0] = 1;
-basisgenerator[2][0] = 2;
-basisgenerator[3][0] = 3;
 
 for(unsigned int i=0; i<4; ++i)
 	
@@ -192,26 +180,20 @@ for(unsigned i=0;i<4;i++) {
 }
 }
 
-
-
 void QuestionLookup::printjackpot_Vector(std::vector<int>& thejackpot_Vector)
 { 
 
 for (unsigned int i=0; i<thejackpot_Vector.size(); i++)
 {
           jackpot_basisgenerator[i][jackpotpermutation] = thejackpot_Vector[i];
-
 }
-
      jackpotpermutation++;
-    
 	for (unsigned int x=0; x<thejackpot_Vector.size(); x++)
   {
   jackpot_basisgenerator[x][jackpotpermutation] = thejackpot_Vector[x];
   }
 
 }
-
 
 void QuestionLookup::jackpot_generateAllPermutations(std::vector<int>& toBePermuted, unsigned int nextIndex)
 { if (nextIndex==toBePermuted.size())
@@ -222,7 +204,6 @@ void QuestionLookup::jackpot_generateAllPermutations(std::vector<int>& toBePermu
 	
   for (unsigned int i=nextIndex; i<toBePermuted.size(); i++)
   {
-
        swap(toBePermuted[i], toBePermuted[nextIndex]);
     jackpot_generateAllPermutations(toBePermuted, nextIndex+1);
     swap(toBePermuted[i], toBePermuted[nextIndex]);
@@ -233,8 +214,6 @@ void QuestionLookup::jackpot_generateAllPermutations(std::vector<int>& toBePermu
 { jackpot_generateAllPermutations(toBePermuted, 0);
 }
 
-
-
 void QuestionLookup::generatejackpot_basis(){
 std::vector<int> thejackpot_Vector;
   thejackpot_Vector.push_back(0);
@@ -243,13 +222,6 @@ std::vector<int> thejackpot_Vector;
   thejackpot_Vector.push_back(3);
     thejackpot_Vector.push_back(4);
   jackpot_generateAllPermutations(thejackpot_Vector);
-
-/* Without the next paragraph, the first jackpot_basis matrix comes out wrong. I have no idea why this is! */
-jackpot_basisgenerator[0][0] = 0;
-jackpot_basisgenerator[1][0] = 1;
-jackpot_basisgenerator[2][0] = 2;
-jackpot_basisgenerator[3][0] = 3;
-jackpot_basisgenerator[4][0] = 4;
 
 for(unsigned int i=0; i<5; ++i)
 	
@@ -268,8 +240,6 @@ for(unsigned i=0;i<5;i++) {
 }
 
 }
-
-// End of matrix algebra functions.
 
 
 // Void to output results
@@ -302,89 +272,8 @@ else{std::cout << std::endl << "Question is from jackpot set"<<std::endl;}
 
 std::cout << std::endl << "Found question at line " << index_of_best_matched_q +1 <<std::endl;
 
-/*
-if (normalorjackpot==0){
-
-
-
-
-        std::cout << std::endl << "Fractional match matrix:"  << std::endl<< std::endl;
-      for(unsigned i=0;i<4;i++) {
-              for(unsigned j=0;j<4;j++) {
-                    std::cout << normal_fractional_match_matrix[i][j] << " ";
-              }
-                      std::cout << std::endl ;
-      }
-
-
-    std::cout << std::endl << "Matched basis matrix:" << std::endl<< std::endl;
-      for(unsigned i=0;i<4;i++) {
-              for(unsigned j=0;j<4;j++) {
-                    std::cout << normal_matched_basis_matrix[i][j] << " ";
-              }
-                      std::cout << std::endl ;
-      }
-}
-else{
-
-
-    std::cout << std::endl << "Matched basis matrix:" << std::endl<< std::endl;
-
-
-      for(unsigned i=0;i<4;i++) {
-              for(unsigned j=0;j<5;j++) {
-                    std::cout << jackpot_matched_basis_matrix[i][j] << " ";
-              }
-                      std::cout << std::endl ;
-      }
-
-
-
-}
 
 std::cout << std::endl << "*****************************************************" << std::endl;
-
-std::cout << std::endl << "Diagnostic information:" << std::endl;
-
-std::cout << std::endl << "*****************************************************" << std::endl;
-
-
-
-
- std::cout << std::endl << "Sample basis matrix (#22):"  << std::endl<< std::endl;
-
-        for(unsigned i=0;i<4;i++) {
-              for(unsigned j=0;j<4;j++) {
-                    std::cout << basis[i][j][22] << " ";
-              }
-                      std::cout << std::endl ;
-      }
-        std::cout << std::endl << "From generator (#22):"  << std::endl<< std::endl;
-    for(unsigned i=0;i<4;i++) {
- std::cout << basisgenerator[i][22]<< " ";
-    }
-    std::cout << std::endl;
-
-             std::cout << std::endl << "Sample jackpot basis matrix (#70):"  << std::endl<< std::endl;
-
-        for(unsigned i=0;i<4;i++) {
-              for(unsigned j=0;j<5;j++) {
-                    std::cout << jackpot_basis[i][j][70] << " ";
-              }
-                      std::cout << std::endl ;
-      }
-        std::cout << std::endl << "From jackpot generator (#70):"  << std::endl<< std::endl;
-    for(unsigned i=0;i<5;i++) {
- std::cout << jackpot_basisgenerator[i][70]<< " ";
-    }
-std::cout << std::endl;
-
-
-
-std::cout << std::endl << "*****************************************************" << std::endl;
-*/
-
-// If we want to discard a bad reading, do it here.
 
 
 }
@@ -399,16 +288,16 @@ std::string QuestionLookup::getAnswer(std::string ocrquestion, std::string Ans1,
 generatebasis();
 generatejackpot_basis();
 
-std::string ocranswer[4];                                                                        // Tesseract outputs answer data Ai. We call these ocranswer[i]
+std::string ocranswer[4];            // Tesseract outputs answer data Ai. We call these ocranswer[i]
     ocranswer[0] = Ans1;
     ocranswer[1] = Ans2;
     ocranswer[2] = Ans3;
     ocranswer[3] = Ans4;
 
-int numnormal = 13310;                                                                      // number of questions in jamiepot (normal game)
-int numjack = 13310;                                                                        // number of questions in jackpot
-std::string questionvec[13310];                                                                  // vector where each entry is question string from file
-int distancevec[13310];                                                                     // vector where each entry is distance between ocrquestion and each truequestion
+int numnormal = 13310;               // number of questions in jamiepot (normal game)
+int numjack = 13310;                 // number of questions in jackpot
+std::string questionvec[13310];      // vector where each entry is question string from file
+int distancevec[13310];              // vector where each entry is distance between ocrquestion and each truequestion
 
 
 
@@ -426,14 +315,14 @@ std::string line;
 for (int i=0;i<13310;++i)
 {
      std::string s2 = questiontextlist[i];
-//           sen2 = split(s2, ' ');                                                        // only enable if using word distance
-     distancevec[i] = LevenshteinDistance(ocrquestion, s2);                    // Here is where you set the distance calculator.
+//           sen2 = split(s2, ' ');                                // only enable if using word distance
+     distancevec[i] = LevenshteinDistance(ocrquestion, s2);        // Here is where you set the distance calculator.
      questionvec[i] = s2;
 }
 
 /* Find smallest element in discancevec - this corresponds to the likely truequestion  */
 
-int smallestdistance = distancevec[0];                                                     // Distance to matched question (Column of distancevec corresponding to matched question)
+int smallestdistance = distancevec[0];                             // Distance to matched question (Column of distancevec corresponding to matched question)
 
 for (unsigned int i = 0; i < numnormal; i++) {
        if (distancevec[i] < smallestdistance) {
@@ -448,16 +337,16 @@ std::vector<int> multiple_match_vec;
 
 /* Here is where we differentiate between normal and jackpot questions: index_of_best_matched_q represents the indwex number of the best matched question  */
 
-if (index_of_best_matched_q<=13021){                                                      // Best matched question is a normal question
+if (index_of_best_matched_q<=13021){                                 // Best matched question is a normal question
 	
-    for (unsigned int q = 0; q < numnormal; q++) {                                        // Give multiple_match_vec an element for each similar question
+    for (unsigned int q = 0; q < numnormal; q++) {                   // Give multiple_match_vec an element for each similar question
         if (distancevec[q] == smallestdistance) {
             multiple_match_vec.push_back (q);
         }
     }
 
-    int answerdistance[4][multiple_match_vec.size()];                                     // Levenshtein distance from ocrquestion to each truequestion
-    std::string trueanswer[4][multiple_match_vec.size()];                                      // Give multiple_match_vec an element for each similar question
+    int answerdistance[4][multiple_match_vec.size()];                 // Levenshtein distance from ocrquestion to each truequestion
+    std::string trueanswer[4][multiple_match_vec.size()];             // Give multiple_match_vec an element for each similar question
 
 
 
