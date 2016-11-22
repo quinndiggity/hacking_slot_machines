@@ -40,7 +40,7 @@ We form a confusion matrix of OCR answers against database answers. Taking the F
 
 This algorithm is especially nice because it's expressed in matrix form and so can be evaluated quickly using linear algebra shortcuts.
 
-The code to carry out the brute force search can be found in `/src/Question_Lookup.cpp`.
+The code to carry out the brute force search can be found in `/src/`.
 
 ### Hardware
 
