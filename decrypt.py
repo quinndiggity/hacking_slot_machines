@@ -1,7 +1,12 @@
+# Script to decode polyalphabetic substitution cipher
+
 import os
 from atlas import maps
 
 def decrypt_char(char, counter, maps):
+    '''
+    decrypt single character
+    '''
     try:
         key_pos = counter % 32 - 1
         trans_char = maps[char][key_pos]
@@ -11,6 +16,9 @@ def decrypt_char(char, counter, maps):
 
 
 def decrypt_page(page):
+    '''
+    decrypt list of strings
+    '''
     decrypted_q = []
     for row, line in enumerate(page):
         decrypted_string = ''
