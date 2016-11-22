@@ -9,8 +9,8 @@ Here's the pipeline:
 - Capture image of slot machine screen with buttonhole camera to rPi microcomputer
 - Process image to undo perspective shift and segment into question and answer boxes with OpenCV
 - Pass processed question boxes to Google Tesseract for text recognition
-- Running read text through a hand-designed brute-force search to get the most likely answer.
-- Pass answer through text-to-speech engine and into hidden earpiece.
+- Running read text through a hand-designed brute-force search to get the most likely answer
+- Pass answer through text-to-speech engine and into hidden earpiece
 - (profit)
 
 The inner workings of the game are probably a little laborious, but the code to hack it is pretty cool and makes use of some neat linear algebra tricks.
@@ -44,7 +44,7 @@ The code to carry out the brute force search can be found in `/src/`.
 
 ### Hardware
 
-I bought a [raspberry pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) microcomputer to run the software, and used a TTS engine to read out the answer into an earpiece..
+I bought a [raspberry pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) microcomputer to run the software, and used a TTS engine to read out the answer into an earpiece.
 
 I actually couldn't get the code to run fast enough on the raspberry pi to be useful (a single pass took about 30s). The bottleneck was the computer vision and OCR (the only bits I couldn't optimize), so I ended up having to pipe the image over wifi to be processed by a laptop in a backpack. The code running on the microcomputer can be found in `./pi_interface.py`.
 
