@@ -28,7 +28,7 @@ This means that we can fairly easily write a script to get a list of questions a
 
 Now we have the data, the fun begins. We need to read the screen, match what we can see to a question in the data bank via a brute force search, and read out the corresponding correct answer.
 
-I initially tried to do this with the question data alone, ignoring the answers. Unfortunately, this doesn't work. Optical character recognition is imperfect, especially when running in real-time off a bad camera. About 30% of the characters will typically be misread. This means that the OCR-read question text is typically too garbled to identify which exact question it corresponds to; we can only narrow the search down to about 30 canditates.
+I initially tried to do this with the question data alone, ignoring the answers. Unfortunately, this doesn't work. Optical character recognition is imperfect, especially when running in real-time off a bad camera. About 30% of the characters will typically be misread. This means that the OCR-read question text is typically too garbled to identify which exact question it corresponds to; we can only narrow the search down to about 30 possible candidates.
 
 So, we need to use the information provided by the answers to help identify which question we are looking at. This makes the brute force search a little more tricky, but still possible.
 
