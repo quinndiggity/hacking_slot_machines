@@ -1,8 +1,8 @@
 # slotbot
 
-One of the games is centered around answering ridiculously difficult general knowledge questions. It has no element of luck, and can be won by skill alone. I wanted to make a system that could use computer vision to consistently and undetectably win the jackpot prize.
+This repo contains the code for a system to hack a particular brand of slot machine using computer vision and brute-force search.
 
-I found the game ROM on the deepweb, and decrypted the question/answer bank. Using this, I made a system that could covertly read the screen and tell me the answer through a secret earpiece.
+The game is centered around answering difficult general knowledge questions. I found the game ROM on the deepweb, and decrypted the question/answer bank. Using this, I made a system that could covertly read the screen and tell me the answer through a secret earpiece.
 
 Here's the pipeline:
 
@@ -40,10 +40,10 @@ We form a confusion matrix of OCR answers against database answers. Taking the F
 
 This algorithm is especially nice because it's expressed in matrix form and so can be evaluated quickly using linear algebra shortcuts.
 
-Here's the code to carry out the brute force search given the output of the OCR.
+The code to carry out the brute force search can be found in `/bin`.
 
 ### Hardware
 
 I bought a [raspberry pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) microcomputer to run the software.
 
-I actually couldn't get the code to run fast enough on the raspberry pi to be useful (a single pass took about 30s). The bottleneck was the computer vision and OCR (the only bits I couldn't optimize), so I ended up having to pipe the image over wifi to be processed by a laptop in my backpack. [Here's the code on the microcomputer](). I used a TTS engine to read out the answer into an earpiece.
+I actually couldn't get the code to run fast enough on the raspberry pi to be useful (a single pass took about 30s). The bottleneck was the computer vision and OCR (the only bits I couldn't optimize), so I ended up having to pipe the image over wifi to be processed by a laptop in my backpack. The code running on the microcomputer can be found in `./pi_interface.py`. I used a TTS engine to read out the answer into an earpiece.
