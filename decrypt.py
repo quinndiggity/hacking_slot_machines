@@ -39,10 +39,10 @@ def main():
     path = 'jackpot_q_bank'
     categories = get_filenames(path)
     for category in categories:
-        page = open('jackpot_q_bank/%s.QQQ' % category, 'r').readlines()[1:]
-        page = [line[:-2] for line in page]
+        page = open('jackpot_q_bank/%s.QQQ' % category, 'r').readlines()[1:] # ignore first metadata line
+        page = [line[:-2] for line in page] # remove newline characters
         decrypted_page = decrypt_page(page)
-        for line in decrypted_page:
+        for line in decrypted_page: # print decrypted data
             print line
 
 
