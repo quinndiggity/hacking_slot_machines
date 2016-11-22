@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Script to decode polyalphabetic substitution cipher
 
 import os
