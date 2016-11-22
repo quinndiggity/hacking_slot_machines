@@ -1,4 +1,4 @@
-# slotbot
+# SlotBot
 
 This repo contains the code for a system to hack a particular brand of slot machine using computer vision and brute-force search.
 
