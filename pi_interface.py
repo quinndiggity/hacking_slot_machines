@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import paramiko
 import picamera
 import os
