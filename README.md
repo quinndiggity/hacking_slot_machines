@@ -13,7 +13,7 @@ Here's the pipeline:
 - Pass answer through text-to-speech engine and into hidden earpiece.
 - (profit)
 
-The inner workings of the game are probably a little laborious, but the code to hack it is pretty cool, and makes use of some neat linear algebra tricks.
+The inner workings of the game are probably a little laborious, but the code to hack it is pretty cool and makes use of some neat linear algebra tricks.
 
 ### The game
 
