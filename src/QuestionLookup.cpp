@@ -21,7 +21,7 @@ QuestionLookup::QuestionLookup(void) {
 
 }
 
-// Levenshtein Distance Function - callable from Main
+// Levenshtein Distance Function (Martin Ettl) - callable from Main
 size_t QuestionLookup::LevenshteinDistance(const std::string &s1 , const std::string &s2 )
 {
         const size_t m( s1.size());
