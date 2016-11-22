@@ -22,7 +22,7 @@ The game asks you a series of general knowledge questions. It presents you with 
 
 
 ### Decrypting the game files
-The game data files look like [this](); encrypted, unreadable text.
+The game data files look like [this](https://github.com/jjough/slotbot/blob/master/jackpot_q_bank/UK_geography_01.QQQ); encrypted, unreadable text.
 Bizzarely, and fortunately, it turned out that this was a [polyaplhabetic substitution cipher](https://en.wikipedia.org/wiki/Enigma_machine).
 This means that we can fairly easily write a script to get a list of questions and answers in human-readable, decrypted form (run `python decrypt.py`).
 When you do it, you find that there are about 15,000 questions in the database, and most of them look like like [this]() - a question with a list of about 20 answers (more on this later).
