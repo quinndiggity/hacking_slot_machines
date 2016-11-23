@@ -23,11 +23,11 @@ def decrypt_page(page):
     '''
     decrypted_page = []
     for row, line in enumerate(page):
-        decrypted_string = ''
+        decrypted_line = ''
         for column, char in enumerate(line):
             decrypted_char = decrypt_char(char,row + 1 + column, maps)
-            decrypted_string += decrypted_char
-        decrypted_page.append(decrypted_string)
+            decrypted_line += decrypted_char
+        decrypted_page.append(decrypted_line)
     return decrypted_page
 
 
