@@ -10,8 +10,8 @@ def decrypt_char(char, counter, maps):
     decrypt single character
     '''
     try:
-        key_pos = counter % 32 - 1
-        decrypted_char = maps[char][key_pos]
+        key_position = counter % 32 - 1
+        decrypted_char = maps[char][key_position]
         return decrypted_char
     except:
         return '?'
@@ -21,14 +21,14 @@ def decrypt_page(page):
     '''
     decrypt list of strings
     '''
-    decrypted_q = []
+    decrypted_page = []
     for row, line in enumerate(page):
         decrypted_string = ''
         for column, char in enumerate(line):
             decrypted_char = decrypt_char(char,row + 1 + column, maps)
             decrypted_string += decrypted_char
-        decrypted_q.append(decrypted_string)
-    return decrypted_q
+        decrypted_page.append(decrypted_string)
+    return decrypted_page
 
 
 def get_filenames(path):
