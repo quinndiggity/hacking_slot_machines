@@ -11,8 +11,8 @@ def decrypt_char(char, counter, maps):
     '''
     try:
         key_pos = counter % 32 - 1
-        trans_char = maps[char][key_pos]
-        return trans_char
+        decrypted_char = maps[char][key_pos]
+        return decrypted_char
     except:
         return '?'
 
