@@ -9,7 +9,7 @@ Here's the pipeline:
 - Capture image of slot machine screen with buttonhole camera to rPi microcomputer
 - Process image to undo perspective shift and segment into question and answer boxes with OpenCV
 - Pass processed question boxes to Google Tesseract for text recognition
-- Running read text through a hand-designed brute-force search to get the most likely answer
+- Run OCR text through a hand-designed brute-force search to get the most likely answer
 - Pass answer through text-to-speech engine and into hidden earpiece
 - (profit)
 
