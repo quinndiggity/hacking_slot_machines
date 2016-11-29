@@ -21,7 +21,7 @@ The game asks you a series of general knowledge questions. It presents you with 
 
 ### Decrypting the game files
 The game data files look like [this](https://github.com/jjough/slotbot/blob/master/jackpot_q_bank/UK_geography_01.QQQ); encrypted, unreadable text.
-Bizzarely, and fortunately, it turned out that this was a [polyaplhabetic substitution cipher](https://en.wikipedia.org/wiki/Enigma_machine).
+Fortunately, it turned out that they are encrypted using an [xor cipher](https://en.wikipedia.org/wiki/XOR_cipher).
 This means that we can fairly easily write a script to get a list of questions and answers in human-readable, decrypted form (run `python decrypt.py`).
 
 ### Designing a brute force search
