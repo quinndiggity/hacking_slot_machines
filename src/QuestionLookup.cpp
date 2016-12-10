@@ -8,7 +8,7 @@ QuestionLookup::QuestionLookup(void) {
 	correctquestioninddex=0;
 	normalorjackpot=0;
 	index_of_best_matched_q = 0;    
-	std::ifstream myfile("/quizviz/text/Q.txt");
+	std::ifstream myfile("/slotbot/text/Q.txt");
 		  
 	if (myfile.is_open())
 	{
