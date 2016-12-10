@@ -49,13 +49,13 @@ int main(int argc, const char * argv[])
 								  318.41744018680112f, 202.96659047014398f);
 
 	// load the prototype/pattern image
-	cv::Mat patternImage = cv::imread("/quizviz/images/prototype1.jpg");
+	cv::Mat patternImage = cv::imread("/slotbot/images/prototype1.jpg");
 	if (patternImage.empty()) {
 		std::cout << "Unable to load pattern image!" << std::endl;
 		return(1);
 	}
 
-	testImage = cv::imread("/quizviz/images/pi_frame.jpg", CV_LOAD_IMAGE_COLOR);
+	testImage = cv::imread("/slotbot/images/pi_frame.jpg", CV_LOAD_IMAGE_COLOR);
 	if (!testImage.empty()) {
 	    ARPipeline pipeline(patternImage, calibration);
 		bool goodmatch = pipeline.processFrame(testImage, m_warpedImg);
