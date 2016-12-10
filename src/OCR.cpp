@@ -3,7 +3,7 @@
 #include "OCR.hpp"
 
 OCR::OCR() {	// initialize tesseract
-    const char* configs = "/quizviz/tessconfig";
+    const char* configs = "/slotbot/tessconfig";
 	tess.SetVariable("tessedit_char_whitelist", "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890?'!\"£%()'.,=+-/:;\\#-<>");
 
     if (tess.Init(NULL, "eng", tesseract::OEM_DEFAULT)) {
