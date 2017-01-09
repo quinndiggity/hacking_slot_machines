@@ -2,7 +2,7 @@
 
 This repo contains the code for a system to hack a particular brand of slot machine using computer vision and brute-force search.
 
-The slot machine game is centered around answering difficult general knowledge questions. I found the game ROM online and decrypted the question/answer bank. Using this, I made a system that could covertly read the screen and tell me the answer through a secret earpiece.
+The slot machine game is centered around answering difficult general knowledge questions. I found the game ROM on the deepweb and decrypted the question/answer bank. Using this, I made a system that could covertly read the screen and tell me the answer through a secret earpiece.
 
 Here's the pipeline:
 
