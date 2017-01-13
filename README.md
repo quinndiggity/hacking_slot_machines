@@ -51,4 +51,4 @@ I actually couldn't get the code to run fast enough on the raspberry pi to be us
 
 ![](quiz.gif)
 
-Fun fact: this still works on about 6,000 slot machines in the UK, each containing about £200 in coins. It also *actually works*.
+Fun fact: this still works on about 6,000 slot machines in the UK, each containing about £200 in coins.
