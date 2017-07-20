@@ -13,8 +13,6 @@ Here's the pipeline:
 - Pass answer through text-to-speech engine and into hidden earpiece
 - (profit)
 
-The inner workings of the game are probably a little laborious, but the code to hack it is pretty cool and makes use of some neat linear algebra tricks.
-
 ### The game
 
 The game asks you a series of general knowledge questions. It presents you with a choice of four answers, where one is correct. The more you get right, the more money you build up, until you win the jackpot.
