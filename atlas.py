@@ -1,4 +1,4 @@
-# character mappings for polyalphabetic substitution cipher
+# character mappings for known plaintext attack
 
 maps = {
 ' ': 	'6543210?>=<;:98\'&%$\xA3"! /.-,+*,(7',
