@@ -1,4 +1,4 @@
-// note: this is a crappy c++ v1 of the algorithm. v2 is in python/numpy (it's literally about 30 lines of code lol) but stuck on my laptop in the UK.
+// code so hideous that even its accursed creator turns away in disgust
 
 #include "QuestionLookup.hpp"
 
