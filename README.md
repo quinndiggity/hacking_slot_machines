@@ -18,7 +18,7 @@ Here's the pipeline:
 The game asks you a series of general knowledge questions. It presents you with a choice of four answers, where one is correct. The more you get right, the more money you build up, until you win the jackpot.
 
 ### Decrypting the game files
-The game data files look like [this](https://github.com/jjough/slotbot/blob/master/jackpot_q_bank/UK_geography_01.QQQ); encrypted, unreadable text.
+The game data files look like [this](https://github.com/tensorman/slotbot/blob/master/jackpot_q_bank/UK_geography_01.QQQ); encrypted, unreadable text.
 Fortunately, it turned out that they were encrypted using an [xor cipher](https://en.wikipedia.org/wiki/XOR_cipher).
 This means that we can fairly easily [write a script](https://en.wikipedia.org/wiki/Known-plaintext_attack) to get a list of questions and answers in human-readable, decrypted form (run `python decrypt.py`).
 
