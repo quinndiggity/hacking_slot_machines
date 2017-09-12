@@ -1,8 +1,15 @@
 # SlotBot
 
+
+
 This repo contains the code for a system to hack a particular brand of slot machine using computer vision and brute-force search.
 
+
+
+
 The slot machine game is centered around answering difficult general knowledge questions. I found the game ROM on the deepweb and decrypted the question/answer bank. Using this, I made a system that could covertly read the screen and tell me the answer through a secret earpiece.
+
+![](quiz.gif)
 
 Here's the pipeline:
 
@@ -46,7 +53,5 @@ I bought a [raspberry pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-
 
 I actually couldn't get the code to run fast enough on the raspberry pi to be useful (a single pass took about 30s). The bottleneck was the computer vision and OCR (the only bits I couldn't optimize), so I ended up having to pipe the image over wifi to be processed by a laptop in a backpack. The code running on the microcomputer can be found in `./pi_interface.py`.
 
-
-![](quiz.gif)
 
 This still works on about 6,000 slot machines in the UK, each containing about £200 in coins.
