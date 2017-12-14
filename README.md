@@ -13,7 +13,7 @@ The slot machine game is centered around answering difficult general knowledge q
 
 Here's the pipeline:
 
-- Capture image of slot machine screen with buttonhole camera to rPi microcomputer
+- Capture image of slot machine screen with buttonhole camera to raspberry pi
 - Process image to undo perspective shift and segment into question and answer boxes with OpenCV
 - Pass processed question boxes to Google Tesseract for text recognition
 - Run OCR text through a hand-designed brute-force search to get the most likely answer
