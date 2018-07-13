@@ -6,8 +6,7 @@ This repo contains the code for a system to hack a particular brand of slot mach
 
 
 
-
-The slot machine game is centered around answering difficult general knowledge questions. I found the game ROM on the deepweb and decrypted the question/answer bank. Using this, I made a system that could covertly read the screen and tell me the answer through a secret earpiece.
+So it turns out that there's a game on a specific brand of slot machine that's basically like an extreme version of Trivial Pursuit. It *also* turns out that the game ROM (containing all the answers) can be found on the deepweb.
 
 ![](quiz.gif)
 
