@@ -1,11 +1,6 @@
 # SlotBot
 
 
-
-This repo contains the code for a system to hack a particular brand of slot machine using computer vision and brute-force search.
-
-
-
 So it turns out that there's a game on a specific brand of slot machine that's basically like an extreme version of Trivial Pursuit. It *also* turns out that the game ROM (containing all the answers) can be found on the deepweb.
 
 This baby paid my rent for a year. Enjoy!
