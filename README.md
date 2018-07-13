@@ -39,8 +39,6 @@ We use the [Levenschtein distance](https://en.wikipedia.org/wiki/Levenshtein_dis
 
 We form a confusion matrix of OCR answers against database answers. Taking the Frobenius inner product between this and every 4-D [permutation matrix](https://en.wikipedia.org/wiki/Permutation_matrix) will give us the metric we need. We can brute-force search over this to find the correct answer. The intuition behind this algorithm is that we're taking the dot product between the observed confusion matrix (which is noisy due to poor observability), and idealized confusion matrices (assuming perfect observability). The idealized confusion matrices take the form of permutation matrices because the four answers can appear in any permutation.
 
-This algorithm is especially nice because it's expressed in matrix form and so can be evaluated quickly using linear algebra shortcuts.
-
 The code to carry out the brute force search can be found in `/src/`.
 
 ### Hardware
